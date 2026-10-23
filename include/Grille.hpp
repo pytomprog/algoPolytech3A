@@ -3,6 +3,7 @@
 
 #include "Vecteur2.hpp"
 
+#include <algorithm>
 #include <concepts>
 #include <iostream>
 #include <vector>
@@ -29,6 +30,7 @@ public:
     unsigned int getHauteur() const;
     void ecrireCase(Vecteur2 position, T nouvelleValeur);
     T lireCase(Vecteur2 position) const;
+    void agrandir(unsigned int longueur, unsigned int hauteur, Vecteur2 decallageOrigine);
 };
 
 #include "Grille.tpp"
