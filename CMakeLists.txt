@@ -12,6 +12,7 @@ set(
     src/main.cpp
     src/Configuration.cpp
     src/Environnement.cpp
+    src/Robot.cpp
 )
 
 include_directories(${HEADERS})

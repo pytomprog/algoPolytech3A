@@ -1,6 +1,8 @@
 #ifndef GRILLE_HPP
 #define GRILLE_HPP
 
+#include "Vecteur2.hpp"
+
 #include <concepts>
 #include <iostream>
 #include <vector>
@@ -22,9 +24,11 @@ public:
     Grille();
     Grille(unsigned int longueur, unsigned int hauteur, T valeurParDefaut);
     
-    void afficher() const;
-    void ecrireCase(int x, int y, T nouvelleValeur);
-    T lireCase(int x, int y) const;
+    void afficher(std::ostream& os = std::cout) const;
+    unsigned int getLongueur() const;
+    unsigned int getHauteur() const;
+    void ecrireCase(Vecteur2 position, T nouvelleValeur);
+    T lireCase(Vecteur2 position) const;
 };
 
 #include "Grille.tpp"
