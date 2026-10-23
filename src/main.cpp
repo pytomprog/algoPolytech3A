@@ -5,6 +5,7 @@
 
 int main() {
     Environnement environnement;
-    Robot robot(Vecteur2(0, 0), environnement);
+    Robot robot(environnement);
+    environnement.setRobot(&robot, Vecteur2(1, 1));
     environnement.afficherCarte();
 }

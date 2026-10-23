@@ -10,7 +10,9 @@ private:
     const Environnement& m_environnement;
     
 public:
-    Robot(Vecteur2 positionInitiale, const Environnement& environnement);
+    Robot(const Environnement& environnement);
+
+    const Vecteur2& getPosition() const;
 };
 
 #endif //ROBOT_HPP

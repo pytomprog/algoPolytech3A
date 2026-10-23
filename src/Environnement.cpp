@@ -1,5 +1,7 @@
 #include "Environnement.hpp"
 
+#include "Robot.hpp"
+
 #include <iostream>
 #include <sstream>
 
@@ -36,8 +38,18 @@ void Environnement::afficherCarte() const {
     for (const auto& positionVictime: m_positionVictimes) {
         carteString[(2*m_carte.getLongueur()+1)*(m_carte.getHauteur()-1-positionVictime.y) + 2*positionVictime.x] = 'V';
     }
+
+    // Ajout du robot
+    if (m_robotPtr) {
+        Vecteur2 positionRobotRepereFixe = m_robotDecallage + m_robotPtr->getPosition();
+        carteString[(2*m_carte.getLongueur()+1)*(m_carte.getHauteur()-1-positionRobotRepereFixe.y) + 2*positionRobotRepereFixe.x] = 'R';
+    }
     
     std::cout << carteString;
 }
 
-void Environnement::setRobot(Robot* robot)
+void Environnement::setRobot(Robot* robotPtr, Vecteur2 positionRobotRepereFixe) {
+    m_robotPtr = robotPtr;
+
+    m_robotDecallage = positionRobotRepereFixe - m_robotPtr->getPosition();
+}
