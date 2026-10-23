@@ -7,12 +7,14 @@
 class Robot {
 private:
     Vecteur2 m_position;
+    Grille<TypeCase> m_carteConnaissance;
     const Environnement& m_environnement;
     
 public:
     Robot(const Environnement& environnement);
 
     const Vecteur2& getPosition() const;
+    void afficherCarteConnaissance() const;
 };
 
 #endif //ROBOT_HPP

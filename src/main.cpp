@@ -8,4 +8,6 @@ int main() {
     Robot robot(environnement);
     environnement.setRobot(&robot, Vecteur2(1, 1));
     environnement.afficherCarte();
+    std::cout << std::endl;
+    robot.afficherCarteConnaissance();
 }

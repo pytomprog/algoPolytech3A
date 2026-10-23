@@ -5,7 +5,8 @@
 
 enum class TypeCase {
     LIBRE,
-    MUR
+    MUR,
+    INCONNU
 };
 
 std::ostream& operator<<(std::ostream& os, TypeCase type);

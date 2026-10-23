@@ -6,6 +6,8 @@ std::ostream& operator<<(std::ostream& os, TypeCase type) {
         return os << '.';
     case TypeCase::MUR:
         return os << '#';
+    case TypeCase::INCONNU:
+        return os << 'i';
     default:
         return os;
     };
